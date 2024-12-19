@@ -1,13 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_i.c                                             :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:17:03 by kuyamagi          #+#    #+#             */
-/*   Updated: 2024/12/07 15:50:23 by kuyamagi         ###   ########.fr       */
+/*   Created: 2024/12/19 15:34:39 by kuyamagi          #+#    #+#             */
+/*   Updated: 2024/12/19 15:39:40 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_str(char *str)
+{
+	int	word_len;
+
+	word_len = 0;
+	while (*str)
+	{
+		write(1, &str, 1);
+		word_len++;
+		str++;
+	}
+	return (word_len);
+}
