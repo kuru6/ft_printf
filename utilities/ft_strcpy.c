@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 15:34:39 by kuyamagi          #+#    #+#             */
-/*   Updated: 2024/12/19 15:39:40 by kuyamagi         ###   ########.fr       */
+/*   Created: 2024/10/24 13:37:43 by kuyamagi          #+#    #+#             */
+/*   Updated: 2024/10/31 17:18:47 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_str(char *str)
+char *ft_strcpy(char *dest, const char *src)
 {
-	int	word_len;
-
-	word_len = 0;
-	while (*str)
-	{
-		write(1, &str, 1);
-		word_len++;
-		str++;
-	}
-	return (word_len);
+    int i = 0;
+    while (src[i] != '\0')
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0'; // 終端文字を忘れずに
+    return dest;
 }

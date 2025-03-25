@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:16:57 by kuyamagi          #+#    #+#             */
-/*   Updated: 2024/12/19 15:37:03 by kuyamagi         ###   ########.fr       */
+/*   Created: 2024/10/24 13:37:43 by kuyamagi          #+#    #+#             */
+/*   Updated: 2024/10/31 17:18:47 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_c(char c)
+size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t	length;
 
-	len = 1;
-	write(1, &c, 1);
-	return (len);
+	length = 0;
+	while (*s)
+	{
+		length++;
+		s++;
+	}
+	return (length);
 }

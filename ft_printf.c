@@ -25,21 +25,21 @@ int	ft_printf(const char *format, ...)
 		if(format[i] ==  '%' && format[i+1]){
 			i++;
 			if(format[i] == 'c')
-				count += ft_char(va_arg(args, int))//1つの文字を出力
+				count += ft_c(va_arg(args, int))// 1つの文字を出力！
 			else if(format[i] == 's')
-				count += ft_str(va_arg(args, char*))//文字列を出力（一般的なCの規約に従う）。
+				count += ft_s(va_arg(args, char*))// 文字列を出力（一般的なCの規約に従う)!
 			else if(format[i] == 'p')
-				count += ft_p(va_arg(args, void*))//void * 型のポインタ引数を16進数形式で出力
+				count += ft_p(va_arg(args, void*))// void * 型のポインタ引数を16進数形式で出力
 			else if(format[i] == 'd' || format[i] == 'i')
-				count += ft_d_i(va_arg(args, int));//10進数の数値を出力
+				count += ft_d_i(va_arg(args, int));// 10進数の数値を出力
 			else if(format[i] == 'u')
-				count += ft_u(va_arg(args, unsigned int));//符号なし10進数の数値を出力
+				count += ft_u(va_arg(args, unsigned int));// 符号なし10進数の数値を出力
 			else if(format[i] == 'x')
-				count += ft_x(va_arg(args, unsigned int), d_type);//数値を16進数の小文字形式で出力
+				count += ft_x(va_arg(args, unsigned int), d_type);// 数値を16進数の小文字形式で出力
 			else if(format[i] == 'X')
-				count += ft_X(va_arg(args, unsigned int), d_type);//数値を16進数の大文字で出力
+				count += ft_X(va_arg(args, unsigned int), d_type);// 数値を16進数の大文字で出力
 			else if(format[i] == '%')
-				count += ft_char('%')//%を出力
+				count += ft_c('%')//%を出力
 			else
 				count += ft_printf_char(form[i]);
 		}
