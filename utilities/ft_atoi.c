@@ -9,7 +9,8 @@
 /*   Updated: 2024/11/21 15:27:56 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
+
 
 int	ft_atoi(const char *nptr)
 {

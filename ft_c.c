@@ -12,11 +12,8 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_c(char c)
+int ft_printf_c(char c)
 {
-	int	len;
-
-	len = 1;
-	write(1, &c, 1);
-	return (len);
+    write(1, &c, 1);
+    return 1;
 }

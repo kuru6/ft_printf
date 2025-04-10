@@ -14,13 +14,13 @@
 
 int	ft_printf_s(char *str)
 {
-	int	len;
+	int	word_len;
 
-	len = 0;
+	word_len = 0;
 	while (*str)
 	{
 		write(1, str, 1);
-		len++;
+		word_len++;
 		str++;
 	}
 	return (word_len);

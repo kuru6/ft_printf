@@ -11,31 +11,32 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
-char *ft_pointer(void *ptr)
+int ft_printf_p(void *ptr)
 {
     unsigned long addr = (unsigned long)ptr;
-    char *hex = ft_16hex(addr);
+    char *hex = ft_16hex(addr, 0);
     if (!hex)
-        return NULL;
+        return 0;
 
-    // "0x" + hex 文字列を連結
     size_t len = strlen(hex);
-    char *result = malloc(len + 3); // 2文字("0x") + hex + '\0'
+    char *result = malloc(len + 3); // "0x" + hex + '\0'
     if (!result)
     {
         free(hex);
-        return NULL;
+        return 0;
     }
 
     result[0] = '0';
     result[1] = 'x';
     strcpy(result + 2, hex);
-
     free(hex);
-    return result;
-}
 
+    int total_len = strlen(result);
+    write(1, result, total_len);
+    free(result);
+    return total_len;
+}

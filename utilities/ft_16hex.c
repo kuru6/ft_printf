@@ -19,10 +19,7 @@ char *ft_16hex(unsigned long num, int uppercase)
     char buffer[17]; // 16桁 + '\0'
     int i = 0;
 
-    if (uppercase == '1')
-        base = "0123456789ABCDEF";
-    else
-        base = "0123456789abcdef";
+    base = (uppercase == 1) ? "0123456789ABCDEF" : "0123456789abcdef";
 
     if (num == 0)
     {
@@ -44,9 +41,11 @@ char *ft_16hex(unsigned long num, int uppercase)
     if (!result)
         return NULL;
 
-    while (i-- > 0)
-        buf[len++] = temp[i];
-
     result[i] = '\0';
+    int j = 0;
+    while (i-- > 0)
+        result[j++] = buffer[i];
+
     return result;
 }
+
