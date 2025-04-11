@@ -10,24 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf
 
-SRCS = ft_printf.c ft_c.c ft_s.c ft_d_i.c ft_u.c ft_x.c ft_p.c main.c\
-       utilities/ft_16hex.c utilities/ft_strcpy.c utilities/ft_strlen.c utilities/ft_atoi.c
+#NAME = ft_printf
+NAME = libftprintf.a
 
-#SRCS = ft_printf.c ft_c.c ft_s.c ft_d_i.c ft_u.c ft_x.c ft_p.c \
-       utilities/ft_itoa.c utilities/ft_16hex.c \
-       utilities/ft_strcpy.c utilities/ft_strlen.c utilities/ft_atoi.c
 
-OBJS = $(SRCS:.c=.o)
+SRCS    = ft_printf.c ft_c.c ft_s.c ft_d_i.c ft_u.c ft_x.c ft_p.c\
+          utilities/ft_16hex.c utilities/ft_strcpy.c utilities/ft_strlen.c \
+          utilities/ft_atoi.c utilities/ft_putchar.c\
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+OBJS    = $(SRCS:.c=.o)
+
+CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@

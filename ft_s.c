@@ -12,10 +12,12 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_s(char *str)
+int	ft_printf_s(const char *str)
 {
 	int	word_len;
 
+	if (!str)
+		str = "(null)";
 	word_len = 0;
 	while (*str)
 	{

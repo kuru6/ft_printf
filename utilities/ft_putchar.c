@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_d_i.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:17:00 by kuyamagi          #+#    #+#             */
-/*   Updated: 2024/12/19 16:16:32 by kuyamagi         ###   ########.fr       */
+/*   Created: 2024/12/07 15:02:11 by kuyamagi          #+#    #+#             */
+/*   Updated: 2024/12/14 16:24:19 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
-int	ft_printf_d_i(int n)
+int	ft_putchar(char c)
 {
-	int	word_len;
-
-	word_len = 0;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		ft_putchar('-');
-		word_len++;
-		n = -n;
-	}
-	if (n >= 10)
-		word_len += ft_printf_d_i(n / 10);
-	ft_printf_d_i((n % 10) + '0');
-	word_len++;
-	return (word_len);
+	return (write(1, &c, 1));
 }
-

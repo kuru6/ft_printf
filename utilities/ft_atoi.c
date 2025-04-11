@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 #include <stddef.h>
 
-
-int	ft_atoi(const char *nptr)
+int	ft_(const char *nptr)
 {
-	int		sign;
-	int		result;
+	int	sign;
+	int	result;
 
 	sign = 1;
 	result = 0;
