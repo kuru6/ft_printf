@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 15:10:41 by kuyamagi          #+#    #+#             */
+/*   Updated: 2025/04/11 15:11:57 by kuyamagi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -20,8 +32,7 @@ char	*ft_16hex(unsigned long n, int uppercase);
 char	*ft_itoa(int n);
 size_t	ft_numlen(long nbr);
 void	ft_putchar(char c);
-size_t  ft_strlen(const char *s);
-char    *ft_strcpy(char *dest, const char *src);
-
+size_t	ft_strlen(const char *s);
+char	*ft_strcpy(char *dest, const char *src);
 
 #endif

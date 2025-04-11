@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:17:00 by kuyamagi          #+#    #+#             */
-/*   Updated: 2024/12/19 16:16:32 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:05:51 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ int	ft_printf_d_i(int n)
 	word_len++;
 	return (word_len);
 }
-
