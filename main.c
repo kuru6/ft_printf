@@ -1,34 +1,45 @@
 #include <stdio.h>
-#include <signal.h>
+#include "ft_printf.h"
 
-#define FG_LYELLOW "\033[1;33m"
-#define RESET_ALL "\033[0m"
-
-#define TEST(num, expr) \
-    printf("TEST %d:\n", num); \
-    expr; \
-    printf("\n");
-
-void sigsegv(int sig)
+int main(void)
 {
-    (void)sig;
-    printf("Segmentation fault caught!\n");
-}
+    int ret_ft, ret_orig;
 
-int main(int ac, char **av)
-{
-    signal(SIGSEGV, sigsegv);
-    printf(FG_LYELLOW "category: mix\n" RESET_ALL);
+    // %c
+    ret_ft = ft_printf("ft_printf: char = [%c]\n",'h');
+    ret_orig = printf("printf   : char = [%c]\n",'h');
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
 
-    if (ac != 1)
-        printf("Test number: %s\n", av[1]);
-    printf("\n");
+    // %s
+    ret_ft = ft_printf("ft_printf: str = [%s]\n", "Hello");
+    ret_orig = printf("printf   : str = [%s]\n", "Hello");
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
 
-    TEST(1, printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%",
-        'A', "42", 42, 42, 42, 42, 42,
-        'B', "-42", -42, -42, -42, -42, 42,
-        'C', "0", 0, 0, 0, 0, 42, 0
-    ));
+    // %p
+    int x = 42;
+    ret_ft = ft_printf("ft_printf: ptr = [%p]\n", &x);
+    ret_orig = printf("printf   : ptr = [%p]\n", &x);
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
+
+    // %d / %i
+    ret_ft = ft_printf("ft_printf: d = [%d], i = [%i]\n", -42, 42);
+    ret_orig = printf("printf   : d = [%d], i = [%i]\n", -42, 42);
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
+
+    // %u
+    ret_ft = ft_printf("ft_printf: u = [%u]\n", 3000000000u);
+    ret_orig = printf("printf   : u = [%u]\n", 3000000000u);
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
+
+    // %x / %X
+    ret_ft = ft_printf("ft_printf: x = [%x], X = [%X]\n", 48879, 48879);
+    ret_orig = printf("printf   : x = [%x], X = [%X]\n", 48879, 48879);
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
+
+    // %%
+    ret_ft = ft_printf("ft_printf: %% percent sign\n");
+    ret_orig = printf("printf   : %% percent sign\n");
+    printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
 
     return 0;
 }

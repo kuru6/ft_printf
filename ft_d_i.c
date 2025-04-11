@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:17:00 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/11 15:05:51 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/11 21:00:50 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_printf_d_i(int n)
 {
 	int	word_len;
+	int	modorichi;
 
 	word_len = 0;
 	if (n == -2147483648)
@@ -24,13 +25,16 @@ int	ft_printf_d_i(int n)
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		modorichi = ft_putchar('-');
+		if(modorichi = -1){
+			return (-1)
+		}
 		word_len++;
 		n = -n;
 	}
 	if (n >= 10)
 		word_len += ft_printf_d_i(n / 10);
-	ft_printf_d_i((n % 10) + '0');
+	ft_putchar((n % 10) + '0');
 	word_len++;
 	return (word_len);
 }

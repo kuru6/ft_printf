@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:58:47 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/11 15:09:54 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:08:51 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	handle_format(const char *format, int i, va_list args)
 	else if (format[i] == 'u')
 		return (ft_printf_u(va_arg(args, unsigned int)));
 	else if (format[i] == 'x')
-		return (ft_printf_x_X(va_arg(args, unsigned int), 0));
+		return (ft_printf_x(va_arg(args, unsigned int), 0));
 	else if (format[i] == 'X')
-		return (ft_printf_x_X(va_arg(args, unsigned int), 1));
+		return (ft_printf_x(va_arg(args, unsigned int), 1));
 	else if (format[i] == '%')
 		return (ft_printf_c('%'));
 	else

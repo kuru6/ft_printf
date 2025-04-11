@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:10:41 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/11 15:11:57 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:08:59 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_printf_s(const char *str);
 int		ft_printf_d_i(int n);
 int		ft_printf_u(unsigned int n);
 int		ft_printf_p(void *ptr);
-int		ft_printf_x_X(unsigned int n, int uppercase);
+int		ft_printf_x(unsigned int n, int uppercase);
 char	*ft_pointer(void *ptr);
 char	*ft_16hex(unsigned long n, int uppercase);
 char	*ft_itoa(int n);
