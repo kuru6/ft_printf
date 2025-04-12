@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:58:47 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/11 20:08:51 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/12 19:17:26 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,29 @@ static int	handle_format(const char *format, int i, va_list args)
 		return (ft_printf_c(format[i]));
 }
 
+static int	handle_plain_char(const char *format, int i, int *count)
+{
+	int	ret;
+
+	ret = ft_printf_c(format[i]);
+	if (ret == -1)
+		return (-1);
+	*count += ret;
+	return (0);
+}
+
+static int	percent(const char *format, int *i, va_list args, int *count)
+{
+	int	ret;
+
+	(*i)++;
+	ret = handle_format(format, *i, args);
+	if (ret == -1)
+		return (-1);
+	*count += ret;
+	return (0);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -47,11 +70,14 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			i++;
-			count += handle_format(format, i, args);
+			if (handle_percent(format, &i, args, &count) == -1)
+				return (va_end(args), -1);
 		}
 		else
-			count += ft_printf_c(format[i]);
+		{
+			if (handle_plain_char(format, i, &count) == -1)
+				return (va_end(args), -1);
+		}
 		i++;
 	}
 	va_end(args);
