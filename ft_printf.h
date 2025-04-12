@@ -31,7 +31,7 @@ char	*ft_pointer(void *ptr);
 char	*ft_16hex(unsigned long n, int uppercase);
 char	*ft_itoa(int n);
 size_t	ft_numlen(long nbr);
-void	ft_putchar(char c);
+int ft_putchar(char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
 

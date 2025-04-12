@@ -19,6 +19,7 @@ int	ft_printf_x(unsigned int n, int uppercase)
 	int		ret;
 
 	len = 0;
+	ret = 0;
 	if (uppercase)
 		base = "0123456789ABCDEF";
 	else
