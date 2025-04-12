@@ -17,8 +17,8 @@ int main(void)
 
     // %p
     int x = 42;
-    ret_ft = ft_printf("ft_printf: ptr = [%p]\n", &x);
-    ret_orig = printf("printf   : ptr = [%p]\n", &x);
+    ret_ft = ft_printf("ft_printf: ptr = [%p]\n", NULL);
+    ret_orig = printf("printf   : ptr = [%p]\n", NULL);
     printf("Return: ft = %d / orig = %d\n\n", ret_ft, ret_orig);
 
     // %d / %i
