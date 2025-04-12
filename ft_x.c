@@ -16,6 +16,7 @@ int	ft_printf_x(unsigned int n, int uppercase)
 {
 	int		len;
 	char	*base;
+	int		ret;
 
 	len = 0;
 	if (uppercase)
@@ -25,6 +26,8 @@ int	ft_printf_x(unsigned int n, int uppercase)
 	if (n >= 16)
 		len += ft_printf_x(n / 16, uppercase);
 	ft_putchar(base[n % 16]);
+	if (ret == -1)
+		return (-1);
 	len++;
 	return (len);
 }
