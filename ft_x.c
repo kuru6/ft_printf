@@ -6,13 +6,13 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:17:20 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/12 18:34:02 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:15:19 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_x(unsigned int n, int uppercase)
+int	ft_printf_x(unsigned long n, int uppercase)
 {
 	int		len;
 	char	*base;
@@ -30,7 +30,7 @@ int	ft_printf_x(unsigned int n, int uppercase)
 			return (-1);
 		len += ret;
 	}
-	ret = ft_putchar(base[n % 16]);
+	ret = ft_printf_c(base[n % 16]);
 	if (ret == -1)
 		return (-1);
 	len++;

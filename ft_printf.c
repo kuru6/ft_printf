@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:58:47 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/12 19:17:26 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:05:55 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	handle_plain_char(const char *format, int i, int *count)
 	return (0);
 }
 
-static int	percent(const char *format, int *i, va_list args, int *count)
+static int	handle_percent(const char *format, int *i, va_list args, int *count)
 {
 	int	ret;
 

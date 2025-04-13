@@ -6,15 +6,14 @@
 #    By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/07 15:02:05 by kuyamagi          #+#    #+#              #
-#    Updated: 2025/04/11 20:19:46 by kuyamagi         ###   ########.fr        #
+#    Updated: 2025/04/13 14:18:10 by kuyamagi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS    = ft_printf.c ft_c.c ft_s.c ft_d_i.c ft_u.c ft_x.c ft_p.c\
-          utilities/ft_16hex.c utilities/ft_strcpy.c utilities/ft_strlen.c \
-          utilities/ft_atoi.c utilities/ft_putchar.c\
+          utilities/ft_strcpy.c utilities/ft_strlen.c utilities/ft_atoi.c\
 
 OBJS    = $(SRCS:.c=.o)
 

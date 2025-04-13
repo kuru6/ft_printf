@@ -6,7 +6,7 @@
 /*   By: kuyamagi < kuyamagi@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:17:17 by kuyamagi          #+#    #+#             */
-/*   Updated: 2025/04/12 18:33:00 by kuyamagi         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:15:09 by kuyamagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf_u(unsigned int n)
 			return (-1);
 		word_len += ret;
 	}
-	ret = ft_putchar((n % 10) + '0');
+	ret = ft_printf_c((n % 10) + '0');
 	if (ret == -1)
 		return (-1);
 	word_len++;
