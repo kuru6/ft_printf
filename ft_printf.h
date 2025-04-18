@@ -27,7 +27,5 @@ int		ft_printf_d_i(int n);
 int		ft_printf_u(unsigned int n);
 int		ft_printf_p(void *ptr);
 int		ft_printf_x(unsigned long n, int uppercase);
-size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dest, const char *src);
 
 #endif
